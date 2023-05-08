@@ -38,9 +38,11 @@ class PetClinicIntegrationTests {
 
 	@Autowired
 	private VetRepository vets;
+	//test
 
 	@Autowired
 	private RestTemplateBuilder builder;
+	//test123
 
 	@Test
 	void testFindAll() throws Exception {

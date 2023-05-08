@@ -26,6 +26,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -121,6 +122,11 @@ class PetControllerTests {
 			.andExpect(model().attributeHasErrors("pet"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("pets/createOrUpdatePetForm"));
+	}
+
+	@Test
+	void testThrowException() {
+		fail(new AssertionError());
 	}
 
 }
